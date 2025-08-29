@@ -27,7 +27,8 @@ class Solution {
 
             int total { nums1_s + nums2_s },
                 left { (nums1_s + nums2_s + 1) / 2 },
-                low {0}, high{nums1_s};
+                low = std::max(0, left - nums2_s),
+                high = std::min(nums1_s, left);
 
             while (low <= high) {
                 int mid1 {(low + high) >> 1}, mid2 {left - mid1},
